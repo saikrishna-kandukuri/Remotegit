@@ -43,5 +43,8 @@ kubectl create clusterrolebinding dashboard-admin -n default \
 ls
 gedit deployment.yaml----file name
 //Create a Deployment using Yaml ---> kubectl create -f deployment.yaml
-ANSIBLE
 
+ANSIBLE : Managing multiple servers via configuration management, Auto scalling up or down , Rolling back
+Ansible is the configuration management tool like puppet,chef,saltstack
+simple to install and setup,NO need of any agent/client software to manage the nodes,capabilites to model complex IT workflows and orchestrate your entire IT infrastructure,Extensible with modules written in any programming language
+Ansible Tower : it is web based interface to amnaging enterprise levels
