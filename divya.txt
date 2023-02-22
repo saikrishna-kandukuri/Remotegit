@@ -1,2 +1,47 @@
+kubernetes : Containerasation Management ,vertical & horizontal scaling , command line & GUI interface,
+Architecture 
+How to Deploy : 2 vm's---1 master and 1 slave
+master should have atleast 2 core cpu's & 4GB RAM
+Nodes  should have atleast 1 core CPU & 4GB RAM ,ubuntu O.S
+On Master 
+ifconfig--- finding IP address of the master machine
+sudo kubeadm init--pod-network-cidr=<> --apiserver-advertise-address=<ip-address-of-master>
+//For starting a Calico CNI : 192.168.0.0/16 or For starting a plannel CNI : 10.244.0.0/16
+// copy the kubeadm token generated on the terminal -----helpful for joining the nodes or connecting slave to the master
 
-ZBNXcnz czx 
+U will find the 3 commands on the terminal like to start using your cluster,you need to run the following as aregular user---copy that commands  and paste it in the same page of the master
+
+// For creating a POD based on Calico
+//want to know the nodes
+kubectl get nodes
+//Want to know the PODS
+kubectl get pods --all-namespaces -o wide
+//For Creating the dashboard first - bring this up before starting or joining the Nodes
+// To enable Proxy and continues with new terminal window
+kubectl proxy
+copy the ip address and paste it website like localhost:8001
+//For dashboard create the service account
+kubectl create serviceaccount dashboard -n default
+//Role Binding
+kubectl create clusterrolebinding dashboard-admin -n default \
+ --clusterrole=cluster-admin \
+ --serviceaccount=default:dashboard
+ //To get the secret key to be pasted into the dashboard token pwd,copy the outcoming secrete key
+ we will get the token generated in master terminal and paste in the localhost:8001------- and then login is accessible to kubernetes dashboards
+ open node terminal---master IP paste in the node terminal
+ IN Dashboard---we can see master and nodes
+ //How to deploy the apps  by using the GUI in dashboard---Create an app---app name--nginx(container image)--no of pods(Containers)--1/2 ---External--port no : 82 , 80--DEPLOY---click on 1 pod--copy the port number and paste in the localhost we will see the page
+//HOw to deploy the apps through CLI on master terminal  
+//1st create a deployment----> kubectl create deployment nginx --image=nginx
+//Verify the deployment --->kubectl get deployments
+//more details about the deployment---->kubectl describe deployment nginx
+//Create service on the nodes-----> kubectl create service nodeport nginx --tcp=80:80
+//To check which deployment is running on which node----> kubectl get svc
+//To delete deployment ------> kubectl delete deployment <name>
+//Deployment via yaml code 
+//write the yaml code in nodepad and save as file in your system
+ls
+gedit deployment.yaml----file name
+//Create a Deployment using Yaml ---> kubectl create -f deployment.yaml
+ANSIBLE
+
