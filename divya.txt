@@ -48,3 +48,68 @@ ANSIBLE : Managing multiple servers via configuration management, Auto scalling 
 Ansible is the configuration management tool like puppet,chef,saltstack
 simple to install and setup,NO need of any agent/client software to manage the nodes,capabilites to model complex IT workflows and orchestrate your entire IT infrastructure,Extensible with modules written in any programming language
 Ansible Tower : it is web based interface to amnaging enterprise levels
+
+
+
+
+ip addr show --- checking Ip address
+hostname -i 
+ifconfig
+ping ----------checking the server response
+ping 8.8.8.8
+ping google.com
+control+z --- stopping the command
+who is domain----getting data about domain
+dig domain ----forward lookup
+dig -x host ---- reverse lookup
+host google.com
+active ports ---netstack -pnltu
+wget filename ---download the file from online source
+hostname -i -------diplays local IP address
+changing from file to tar file ----tar -cvf filename.tar filename
+
+here --- filename.tar ----destination
+   filename ------source
+   
+   UNTAR --- changing form tar to normal file
+   first do Gzip and the untar
+   gzip filename.tar.gz filename.tar
+   tar -zxvf filename.tar.gz
+   fdisk -l -----listing the disk total space
+   free -m ----- view the free space
+   df -- mount paoints --- in kbs
+   df -Th ---- mount points --- in mbs
+   df -i -------i nodes ( the total data stored in the disk is I nodes)
+   du -sh ----view the memory usage in kilobytes
+   moving from folder to root --- cd/root/
+   moving to folder ----cd dir1/  or cd~   or cd
+   coming back -- cd ..
+   cd ../..
+   cd ..\..
+   cd c/d/
+   cd -    -----going to back to the same path
+   
+   yum install tree
+   tree
+   EX: directories : a/b/c/d/e
+   come to c dir : cd a/b/c/
+   come to a dir : cd ../..
+   again back to c dir : cd -
+   
+   GREP Commands: Global Regular Expression Print --- searching purpose in the files
+   grep divya file1  or grep -i divya file1  or cat file1| grep devops  ----o/p: searches the divya word in the file1
+   grep -v divya file1 ----o/p:  except that word ,all lines shows in the file
+   cat file1| grep devops ----o/p: that devops word lines in the file are excuted
+   
+   SED Commands : STREAM EDitor
+   sed '=' file1 -----o/p: excutes the lines with line numbers i separate lines
+   sed -n '3,6p' file1 ----o/p: excutes 3 to 6 lines in the file1
+   echo Hi | sed 's/Hi/Hello/' ----chnaging word Hi to Hello 
+   sed '3c\kittu' file1 --- To chnage the 3rd line in the  file
+   
+   Linux Dirctory system:
+   FHS : fully hirearchy system
+   
+   
+   
+   
