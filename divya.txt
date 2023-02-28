@@ -149,6 +149,15 @@ here --- filename.tar ----destination
      ln -s clouds/aws/aws2 aws2
      ll
      ln -s clouds/aws/aws3 aws3
+     
+     Forget password : ???
+     useradd meena
+     passwd meena
+     123456
+     123456
+     forget password then
+     passwd meena
+     again changing the new password
               
    
    
