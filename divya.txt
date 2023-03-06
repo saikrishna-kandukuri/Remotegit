@@ -161,4 +161,36 @@ here --- filename.tar ----destination
               
    
    
+   Jennkins _ Master slave
+   Running from: /usr/share/java/jenkins.war
+   cat /etc/passwd
+   usernad passwd : passwd jenkins
+   
+   In SLAVE :
+   usr and pwd same steps as in master
+   master >  su - jenkins   ----switching to jenkins user
+    ssh-keygen --- key gen for connecting nodes
+    Generating public/private rsa key pair.
+Enter file in which to save the key (/var/lib/jenkins/.ssh/id_rsa):
+enter
+enter
+enter ---public and private keys generates
+ls /var/lib/jenkins/.ssh/   ----keys are in this path   id_rsa  id_rsa.pub
+ssh-copy-id jenkins@localhost
+yes  --- o/p : Number of key(s) added: 1
+ssh 'jenkins@localhost'  -- connecting to local host
+hostname -i
+u will get private ip ---- means master jenkins machine is connected to local machine
+exit -----o/p:logout
+Connection to localhost closed.
+master>ssh-copy-id jenkins@52.14.201.222    ---- connecting slave 1 by using pubic ip slave 1
+yes
+password of slave 1 password
+ssh 'jenkins@slave1 public ip address'
+then we will see the slave 1 private ip address means in master slave ip address can be seen so connectin is done with the master and slave
+
+
+
+   
+   
    
