@@ -1,1 +1,199 @@
-i learned git
+ll
+    2  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    3  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+    4  yum install java-1.8.0-openjdk git maven jenkins -y
+    5  systemctl restart jenkins.service
+    6  ls
+    7   sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    8  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+    9  yum install java-1.8.0-openjdk git maven jenkins -y
+   10  mvn
+   11  clear
+   12  java 
+   13  java --version
+   14  java -version
+   15  jenkins
+   16  git
+   17  clear
+   18  jenkins
+   19  systemctl status jenkins.service
+   20  systemctl start jenkins.service
+   21  systemctl status jenkins.service
+   22  jenkins
+   23  yum install fontconfig java-11-openjdk
+   24  java -version
+   25  yum install java-11-openjdk
+   26  jdk -version
+   27  java -version
+   28  sudo systemctl enable jenkins
+   29  sudo systemctl start jenkins
+   30  java -version
+   31  clear
+   32  sudo yum install java-11-openjdk-devel
+   33  sudo yum install java-11-openjdk
+   34  sudo amazon-linux-extras install java-openjdk11
+   35  java -version
+   36  jenkins
+   37  yum erase java-1.8.0_362
+   38  yum erase java-1.8.0-openjdk
+   39  java -version
+   40  rpm -qa |grep java
+   41  rpm -e java-1.8.0-openjdk
+   42  rpm -e java-1.8.0
+   43  rpm -e java1.8.0
+   44  rpm -e java
+   45  java -version
+   46  clear
+   47  update-java-alternatives --list
+   48  sudo update-alternatives --config java
+   49  java -version
+   50  clear
+   51  jenkins
+   52  git
+   53  maven
+   54  mvn
+   55  systemctl restart jenkins.service
+   56  systemctl status  jenkins.service
+   57  systemctl restart jenkins.service
+   58  systemctl status  jenkins.service
+   59  ll
+   60  systemctl status  jenkins.service
+   61  systemctl restart jenkins.service
+   62  systemctl status  jenkins.service
+   63  systemctl restart jenkins.service
+   64  systemctl status  jenkins.service
+   65  cat file:/var/lib/jenkins/%25C/jenkins/war/WEB-I....Class,int
+   66  cat /var/lib/jenkins/%25C/jenkins/war/WEB-I....Class,int
+   67  systemctl status  jenkins.service
+   68  -1
+   69  use -l
+   70  -l
+   71  systemctl status  jenkins.service
+   72  cat /var/lib/jenkins/secrets/initialAdminPassword
+   73  systemctl status  jenkins.service
+   74  -l
+   75  jenkins
+   76  clear
+   77  netstat -ano|find "8080"
+   78  ls
+   79  java -version
+   80  ls
+   81  /etc/default/
+   82  cd /etc/default/
+   83  ls
+   84  cd /etc/default/jenkins
+   85  cd /etc/
+   86  ls
+   87  yum install jenkins
+   88  systemctl edit jenkins
+   89  jenkins
+   90  sudo netstat -anlp | grep 8080
+   91  systemctl status jenkins
+   92  cat /var/lib/jenkins/secrets/initialAdminPassword
+   93  systemctl restart jenkins.service
+   94  systemctl status  jenkins.service
+   95  net start jenkins
+   96  netstat jenkins
+   97  java -jar jenkins.war --httpPort=8080
+   98  java -jar jenkins.war --httpPort=8081
+   99  sudo java -jar jenkins.war --httpPort=8081
+  100  sudo java -jar jenkins.war --httpPort=8080
+  101  /usr/share/java/
+  102  cd /usr/share/java/
+  103  ls
+  104  vim jenkins.war
+  105  cd ./jenkins.war
+  106  cd /etc/
+  107  ls
+  108  cd ./default/
+  109  ls
+  110  java -jar jenkins.war --httpPort=8080
+  111  java -jar jenkins.war --httpPort=8082
+  112  cd /usr/share/java/
+  113  ls
+  114  cat jenkins.war 
+  115  netstat -a | grep port
+  116  netstat -a 
+  117  systemctl jenkins status
+  118  systemctl status jenkins
+  119  systemctl jenkins restart
+  120  systemctl restart jenkins
+  121  systemctl status jenkins
+  122  java -version
+  123  sudo nano /etc/default/jenkins
+  124  systemctl status jenkins
+  125  cd /etc/sysconfig/
+  126  ls
+  127  cd ./jenkins
+  128  cat jenkins
+  129  sudo netstat -ntulp | grep 8080
+  130  sudo netstat -ntulp 
+  131  netstat -a | grep port
+  132  netstat -a 
+  133  clear
+  134  sudo -i
+  135  cd /var/lib/jenkins/
+  136  ls
+  137  cd ../
+  138  sudo ufw allow 8080/tcp
+  139  sudo ufw allow 8080
+  140  sudo ufw allow 8081
+  141  -Djava.net.preferIPv4Stack=true
+  142  java -jar jenkins.war --httpPort=8081
+  143  java -jar Calculator.jar
+  144  java -jar TestJar.jar
+  145  java -jar myjar.jar
+  146  java -jar "%~dp0\myjar.jar"
+  147  curl localhost:8081
+  148  curl <aws_instance_ip_address>:8080
+  149  sudo journalctl -u jenkins
+  150  systemctl status jenkins.service
+  151  sudo vim/etc/passwd 
+  152  sudo vim /etc/passwd
+  153  cat /etc/passwd
+  154  passwd jenkins
+  155  visudo
+  156  vim /etc/ssh/sshd_config
+  157  sudo systemctl restart sshd
+  158  sudo systemctl status sshd
+  159  cd /home/
+  160  ls
+  161  sudo -i
+  162  java -jar jenkins.war
+  163  cd /etc/sysconfig/
+  164  ls
+  165  cat ./jenkins 
+  166  vim ./jenkins 
+  167  systemctl restart jenkins
+  168  systemctl status jenkins
+  169  cd /lib/var
+  170  cd sudo ~
+  171  sudo i
+  172  sudo -i
+  173  sudo cat /etc/default/jenkins
+  174  cd /etc/default/jenkins
+  175  cd /etc/default/
+  176  ls
+  177  cat jenkins.save 
+  178  rm -rf jenkins.save 
+  179  ls
+  180  cleare
+  181  clear
+  182  java -jar jenkins.war
+  183  sudo -i
+  184  systemctl restart jenkins.service
+  185  systemctl status jenkins.service
+  186  jenkins
+  187  systemctl status jenkins.service
+  188  java
+  189  java - version
+  190  java -version
+  191  jenkins --version
+  192  systemctl status jenkins.service
+  193  vim  /etc/passwd
+  194  cat /etc/passwd
+  195  systemctl status jenkins.service
+  196  sudo systemctl restart sshd
+  197  sudo systemctl status  sshd
+  198  su - jenkins
+  199  history
