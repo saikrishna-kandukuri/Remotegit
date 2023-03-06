@@ -161,7 +161,8 @@ here --- filename.tar ----destination
               
    
    
-   Jennkins _ Master slave
+   Jennkins _ Master slave  :                   starting of the master -if connection not happening ---sudo amazon-linux-extras install epel -y
+   
    Running from: /usr/share/java/jenkins.war
    cat /etc/passwd
    usernad passwd : passwd jenkins
@@ -189,8 +190,45 @@ password of slave 1 password
 ssh 'jenkins@slave1 public ip address'
 then we will see the slave 1 private ip address means in master slave ip address can be seen so connectin is done with the master and slave
 
+slave2 : useradd jenkins
+passwd jenkins
+saidivya
+visudo
+yyp -- copy paste root user
+jenkins all nopasswd:all
+vim /etc/ssh/sshd_config   --- password authentication yes
+systemctl restart sshd
+systemctl status sshd
+IN master > -bash-4.2$   ssh-copy-id jenkins@slave2 public ip
+yes
+slave2 password
+copy command
+ssh 'jenkins:slave2 public ip'
+will see the private ip address of slave2
+
+How many slave nodes are connected to master----jnkins GUI -- manage jenkins---manage nodes and clouds---
+
+IN slave to master connection:
+su - jenkins
+ssh-keygen
+enter
+enter
+enter
+jenkins slave>ssh-copy-id jenkins@localhost
+key generated
+ssh 'jenkins@localhost'
+exit
+>ssh-copy-id jenkins@master ip address
+yes
+enter
+password : master pwd
+ssh jenkins@master public ip address
+hostname -i
+u will see the master private ip address
 
 
-   
+
+Jenkins Dasboard
+ 
    
    
