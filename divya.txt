@@ -228,7 +228,8 @@ u will see the master private ip address
 
 
 
-Jenkins Dasboard
+Jenkins Dasboard:
+
  
    
    
