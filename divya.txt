@@ -238,11 +238,6 @@ https://hub.docker.com/choose-plan?ref=signup --- username :divyatunuguntla,said
 
 
 
-
-
-
-
-
 Docker:
 cat /etc/os-release
 list the containers in ec2 --- docker ps -a   ---- it shows runinng and stopped containers also
@@ -274,6 +269,8 @@ A /tmp/divya
  
  Now image1 -----> container (divya file ,some edits happened) ------>Image2 builded ---- then in this image2 --we will see the divya file.
  
+ may11 th video:
+ 
  docker commit divya ubuntu1
  docker images
  docker run -it --name divya ubuntu /bin/bash
@@ -294,6 +291,19 @@ A /tmp/divya
     docker images
    docker run -it --name divya2 ubuntu1
    
+   DOCKER FILE:
+   
+   image --> container (file --adding,commiting)cd f1---->image
+   All this is manual process ,we need to do Automate the process through docker file
+   
+   text file
+   automation of docker image creation
+   d is capital in docker file
+   starts components also be capital letter
+   
+ DOCKER FILE COMPONENTS: FROM,RUN,COPY,ADD,EXPOSE,WORKDIR,CMD,ENTRYPOINT,ENV,ARG ......
+ COPY : COPYIES THE LOCAL FILES
+ ADD: EXTRAS the files from internet and docker
  
  
  
