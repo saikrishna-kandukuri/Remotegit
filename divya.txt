@@ -261,7 +261,41 @@ docker run -it --name divya1 ubuntu /bin/bash
  docker images
  ex: we have ubuntu image then create a container from image
  docker run -it --name divya ubuntu /bin/bash
- wana create tem file in divya container ---
+ wana create tem file in divya container ---  cd /tmp/
+ cat>divya
+ 
+ hi all hhkjpl ----control+d
+ exit
+ docker diff divya --o/p: C /root
+A /root/.bash_history
+C /tmp
+A /tmp/divya
+ Here: a -- append ,c-change ,d: deletion
+ 
+ Now image1 -----> container (divya file ,some edits happened) ------>Image2 builded ---- then in this image2 --we will see the divya file.
+ 
+ docker commit divya ubuntu1
+ docker images
+ docker run -it --name divya ubuntu /bin/bash
+     docker diff divya
+    docker images
+    docker ps
+    docker ps -a
+    docker commit divya ubuntu
+    docker images
+    docker commit divya ubuntu1
+   docker images
+    docker rm ubuntu
+    docker ps -a
+    docker images
+   docker run -it --name divya1 ubuntu1
+   docker images
+    docker commit divya1 ubuntu1
+    docker images
+   docker run -it --name divya2 ubuntu1
+   
+ 
+ 
  
 
 
