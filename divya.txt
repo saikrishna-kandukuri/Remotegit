@@ -228,10 +228,24 @@ u will see the master private ip address
 
 
 
-Jenkins Dasboard:
+
 
 AWS console: https://aws.amazon.com/marketplace/partners/management-tour
-codingrad : https://learn.codingrad.com/student-login/
+codingrad : https://learn.codingrad.com/student-login/  ----notes
+https://learn.codingrad.com/devops-april-2022/    ----videos
+
+
+
+
+
+
+
+
+
+
+Jenkins Dasboard:
+
+
 
  
    
