@@ -233,6 +233,7 @@ u will see the master private ip address
 AWS console: https://aws.amazon.com/marketplace/partners/management-tour
 codingrad : https://learn.codingrad.com/student-login/  ----notes
 https://learn.codingrad.com/devops-april-2022/    ----videos
+https://hub.docker.com/choose-plan?ref=signup --- username :divyatunuguntla,saidivya550@gmail.com,pwd:Prudhviraj467*
 
 
 
@@ -242,8 +243,26 @@ https://learn.codingrad.com/devops-april-2022/    ----videos
 
 
 
-
-Jenkins Dasboard:
+Docker:
+cat /etc/os-release
+list the containers in ec2 --- docker ps -a   ---- it shows runinng and stopped containers also
+create container with new name ---- docker run -it --name divya ubuntu  ------------------------divya container is created with ubuntu image
+docker run -it --name divya ubuntu /bin/bash  ---- another way to create container
+docker run -it --name divya1 ubuntu /bin/bash
+ docker run -it --name divya2  ubuntu touch f1 
+ If we wana add any files  and going inside of the container , -- we need to start the container -----> docker start divya1
+ docker ps -a
+ docker ps
+ docker attach divya1 ---- going inside of container divya1
+ docker stop divya2 -- stps the container
+ docker rm divya1 ---- removes the container
+ 
+ BUILD AN CONTAINER FROM IMAGE:
+ docker images
+ ex: we have ubuntu image then create a container from image
+ docker run -it --name divya ubuntu /bin/bash
+ wana create tem file in divya container ---
+ 
 
 
 
