@@ -431,6 +431,69 @@ exit
 
 
 DOCKER VOLUMES:
+EBS:Elastic block storage --till 30 gd extenable
+like ROM
+FOR EC2
+what for docker ---?
+In Docker volumes
+container created---- volume creates
+volume is dir inside the container
+sharable
+after declare the directory volume ------then only sharable
+If container stops ----can access the volume
+declare the directory volume----while crating the container
+we can't ceate the volumes ---for already existing container
+1 volume --- sharable to many containers
+if conainter -1 volume is shared to container -2, --- then chnages made by container-2 ---changes effected to container-1 also
+mapping 2 ways
+container  <---------> container
+Host  <-----------> Container
+deleting containers--- volumes are not created
+
+CREATING VOLUMES:
+1.create Dockerfile and write
+
+vi Dockerfile
+FROM ubuntu
+VOLUME ["/krishna"]
+RUN touch f1
+
+we have docker file --- changed to container through build command
+docker build -t image3 .
+
+image created --- next create to container--- through run command
+docker run -it --name cont-3 image3 /bin/bash
+ll
+o/p: drwxr-xr-x   1 root root  66 Mar 17 00:26 etc/
+-rw-r--r--   1 root root   0 Mar 17 00:25 f1
+drwxr-xr-x   2 root root   6 Apr 18  2022 home/
+drwxr-xr-x   2 root root   6 Mar 17 00:25 krishna/
+exit
+docker ps -a 
+
+o/p: CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                      PORTS     NAMES
+a9d11cbb6c7d   image3    "/bin/bash"   2 minutes ago    Exited (0) 27 seconds ago             cont-3
+bed03854c602   image2    "/bin/bash"   25 minutes ago   Exited (0) 21 minutes ago             cont-2
+504d3c0fc833   image1    "/bin/bash"   52 minutes ago   Exited (0) 50 minutes ago             cont-1
+
+docker start cont-3
+docker attach cont-3
+cd krishna/
+ll
+cat>kittu
+This is my volume-1
+exit
+docker ps -a
+
+NOw we have cont-3 , in that cont-3 has kittu volume
+Now it can be sharable to other containers
+
+VOLUME SHARING:
+
+ 
+
+
+
 
 
  
