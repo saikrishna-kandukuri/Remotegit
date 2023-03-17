@@ -614,6 +614,13 @@ for detailed explanation: https://www.geeksforgeeks.org/how-to-setup-jenkins-in-
  To delete all stopped containers: docker rm $(docker ps -a -q)
  to delete all images : docker rmi -f $(docker images -q)
  
+ DOCKER SWARM:
+ Container Management
+ cluster is collection of nodes 
+ Managing of clusters
+ Swarm worker and Swarm Manager
+ 
+ 
  
 
 
