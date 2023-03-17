@@ -239,6 +239,8 @@ https://hub.docker.com/choose-plan?ref=signup --- username :divyatunuguntla,said
 
 
 Docker:
+
+
 cat /etc/os-release
 list the containers in ec2 --- docker ps -a   ---- it shows runinng and stopped containers also
 create container with new name ---- docker run -it --name divya ubuntu  ------------------------divya container is created with ubuntu image
@@ -518,7 +520,99 @@ docker attach cont-3
  if wnat to know which containers having volumes:
   docker container inspect cont-1
   
+  delete the images : docker rmi <your-image-id>
+  docker image prune
+  
+  DOCKER PORTS: Connecting jenkins with port number by using docker
+  
+  yum install docker -y
+  docker --version
+  service docker start
+  service docker status
+  docker images
+  docker ps -a
+  docker pull jenkinsci/jenkins
+  docker run -it --name cont-1 jenkinsci/jenkins /bin/bash
+  exit
+  docker inspect jenkinsci/jenkins
+  We need to assign the port number
+  docker run -p 8080:8080 -p 5000:5000 jenkinsci/jenkins
+  o/p: This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+  copy public ip address and paste it in url:8080 --- we will get jenkins login page and paste the password
+  
+  Google search commands:
+  
+sudo yum update -y                             # To update all packages
+sudo amazon-linux-extras install docker        # To install docker latest version
+sudo service docker start                      # To start docker service
+sudo service docker status                     # To check status of docker service. If it's running or not.
+sudo systemctl enable docker                   # To ensure that docker service start after each reboot 
+sudo usermod -a -G docker ec2-user             # To add ec2-user to docker group
+
+for detailed explanation: https://www.geeksforgeeks.org/how-to-setup-jenkins-in-docker-container/
+
+
+  
+  Exec and Attach:
+  
+  Attach is used for go inside of the container
+  Exec is also used for go inside of the container but creates the new process for entering the container
+  ppid : parent process id ,pid: process id
+  
+  Expose and Public:
+  
+  3 ways: 1. Neither specify expose nor -p:---- that service in the container will only be accessible from inside of the container itself
+  
+          2. Only specifies expose : if you expose a port  -- the service in the container is not accessible from outside of docker,but from inside other docker      
+             containers, this is good for inner docker container communication.    
+           
+          3. specify expose and -p : ---- the service in the container is accessible from anywhere,even outside of the docker
+          
+          If u do -p only but do not expose ---- docker does an implict expose.this is becoz if a port is oen to the public ,it is automatically open to the other      docker containers.
+  
+  
+ DOCKER PUSH:
  
+ image----container(some editings)----image----docker hub
+ //// in ubuntu default we didn't get vim and default we get nano////
+ 
+ 
+ docker pull ubuntu
+ docker images
+ docker run -it --name cont-5  ubuntu /bin/bash
+ cd /tmp/
+ touch d1 d2 d3 d4
+ ll
+ apt update -y
+ apt install git -y
+ apt install tree vim -y
+ exit
+ docker images
+ wana build image from container -- will use committ command:
+ Already we have an container -- cont-push and can be changing to image --- ubuntu-1
+ 
+ docker commit cont-push ubuntu-1
+ docker images
+ 
+ docker hub pushing: 
+ docker login : divyatunuguntla
+ Prudhviraj467*
+ 
+ ////IN git to github , if we want push the code , we will do commit, in the same way we need to do tag in docker////
+ 
+ docker tag imagename reponame
+ docker tag ubuntu-1 divyatunuguntla/chocolatefile
+ docker images
+ docker push divyatunuguntla/chocolatefile
+ 
+ OTHER COMMANDS:
+ 
+ docker images
+ docker ps 
+ docker ps -a
+ To stop all the containers which are in start mode: docker stop $(docker ps -a -q)
+ To delete all stopped containers: docker rm $(docker ps -a -q)
+ to delete all images : docker rmi -f $(docker images -q)
  
  
 
