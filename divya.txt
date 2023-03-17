@@ -490,6 +490,35 @@ Now it can be sharable to other containers
 
 VOLUME SHARING:
 
+docker login
+username:divyatunuguntla
+pwd:Prudhviraj467*
+Credentials--- should dockerhub details
+
+docker run -it --name cont-4 --privileged=true --volumes-from cont-3 image3 /bin/bash
+cd krishna/
+ll
+cat kittu
+
+we have cont-3 and volume is kittu ----- shared to cont-4 and having same volume of kittu
+Now if we are going to do any changes in cont-4 of volume kittu --- changes will reflect in cont-3 of volume kittu
+
+now in cont-4 ---krishna file--->    root@f3ff672954a1:/krishna# cat>krishna1
+This is modified content
+exit
+
+docker ps -a
+docker start cont-3
+docker attach cont-3
+ cd krishna/
+ ll
+ cat krishna1
+ This is modified content
+ 
+ 
+
+
+
  
 
 
