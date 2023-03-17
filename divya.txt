@@ -488,7 +488,7 @@ docker ps -a
 NOw we have cont-3 , in that cont-3 has kittu volume
 Now it can be sharable to other containers
 
-VOLUME SHARING:
+VOLUME SHARING:Automatic
 
 docker login
 username:divyatunuguntla
@@ -514,6 +514,11 @@ docker attach cont-3
  ll
  cat krishna1
  This is modified content
+ 
+ if wnat to know which containers having volumes:
+  docker container inspect cont-1
+  
+ 
  
  
 
