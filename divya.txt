@@ -307,6 +307,137 @@ A /tmp/divya
  
  
  
+ 
+ DOCKER FILE CREATION:
+ 
+ CREATE A FILE ----docker file
+ IN docker File -----Add instructions
+ Build docker file-----to create the docker image
+ Run image----to create a container
+ 
+ sudo -i
+ sudo yum update -y
+ sudo yum install docker -y
+ docker --version
+ docker version 
+ will see only client and host
+ systemctl restart docker.service
+ systemctl status docker.service
+ docker version
+ will see the client and server data
+ docker images
+ docker ps
+ docker ps -a
+ vim Dockerfile
+ FROM ubuntu
+ RUN echo " my name is divya" >/tmp/divya
+  cat Dockerfile
+  
+  Creating an image:
+  docker build -t image1 .      ------. represents current directory
+  o/p:
+  Sending build context to Docker daemon  113.3MB
+Step 1/2 : FROM ubuntu
+latest: Pulling from library/ubuntu
+2ab09b027e7f: Pull complete 
+Digest: sha256:67211c14fa74f070d27cc59d69a7fa9aeff8e28ea118ef3babc295a0428a6d21
+Status: Downloaded newer image for ubuntu:latest
+ ---> 08d22c0ceb15
+Step 2/2 : RUN echo " my name is divya" >/tmp/divya
+ ---> Running in 194a08c5b440
+Removing intermediate container 194a08c5b440
+ ---> b482871e9470
+Successfully built b482871e9470
+Successfully tagged image1:latest
+>docker images
+
+o/p: REPOSITORY   TAG       IMAGE ID       CREATED              SIZE
+image1       latest    b482871e9470   About a minute ago   77.8MB
+ubuntu       latest    08d22c0ceb15   8 days ago           77.8MB
+
+docker ps -a
+no containers
+
+create container :
+
+docker run -it --name cont-1 image1 /bin/bash
+cd /tmp/
+ll
+cat divya
+o/p: my name is divya
+exit
+
+
+Another examples:
+vim Dockerfile
+FROM ubuntu
+WORKDIR /tmp
+RUN echo "learning docker file automation" >/tmp/divya
+ENV name divya
+COPY file1 /tmp
+ADD test.tar.gz /tmpp
+
+cat Dockerfile
+docker build -t image2 .    HERE .--- represents the current directory
+build failed 
+because : in docker file we copying the file1 , but we didn't crewated the file1
+vim file1
+thgis is my file1
+cat Dockerfile
+next we want test.tar.gz file for that
+touch test
+tar -cvf test.tar test   ----creating test to test.tar file
+ll
+gzip test.tar  ----creating test.tar file to test.tar.gz file
+ll
+NOw don't need the test file --- rm -rf test
+ll
+
+cat Dockerfile
+docker build -t image2 .
+o/p: Sending build context to Docker daemon  113.3MB
+Step 1/6 : FROM ubuntu
+ ---> 08d22c0ceb15
+Step 2/6 : WORKDIR /tmp
+ ---> Using cache
+ ---> f9bb3dd48af1
+Step 3/6 : RUN echo "learning docker file automation" >/tmp/divya
+ ---> Using cache
+ ---> a2170765c6e1
+Step 4/6 : ENV name divya
+ ---> Using cache
+ ---> 246c5364a7f6
+Step 5/6 : COPY file1 /tmp
+ ---> 06ebfbcfda5f
+Step 6/6 : ADD test.tar.gz /tmp
+ ---> 586cea877bab
+Successfully built 586cea877bab
+Successfully tagged image2:latest
+
+docker images
+image2       latest    586cea877bab   About a minute ago   77.8MB
+image1       latest    b482871e9470   27 minutes ago       77.8MB
+ubuntu       latest    08d22c0ceb15   8 days ago           77.8MB
+
+image------> Container
+docker run -it --name cont-2 image2 /bin/bash
+cat Dockerfile
+docker start cont-2
+docker attach cont-2
+cat divya
+echo $name
+cat file1
+exit
+
+
+DOCKER VOLUMES:
+
+
+ 
+
+ 
+ 
+ 
 
 
 
