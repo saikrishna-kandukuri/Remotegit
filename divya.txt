@@ -698,7 +698,7 @@ create a service : > docker service
 
 create a docker service: docker service create --name mtickets --replicas 3 --publish 80:80 httpd
 
-Here: mtickets is the servicename , replicas : h/w many nodes 
+Here: mtickets is the servicename , replicas : h/w many nodes ,httpd---image name
 
 docker service ls
 
@@ -717,10 +717,11 @@ docker rm -f containerID
 
 Wnana see the service in physically : copy public IP and paste in browser:80
 
-
 inspect the container: docker inspect containerID
 inspect service: docker service inspect --pretty servicename -----o/p: is json formate
 docker service inspect servicename -----o/p: is YAML formate
+
+
 
 DOCKER STACK:
 
@@ -728,6 +729,56 @@ It is used to launch whole software together
 you will write all the services and launch them together
 
 docker stack deploy -c demo.yml demostack
+
+demo.yml---name of the file , demostack ---name of stack
+vim demo.yml
+docker compose install search in google chrome ---- in this page we will get the installation commands :https://docs.docker.com/compose/install/other/
+
+To download and install Compose standalone, run
+curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose ---------docker compose installation
+chmod +x /usr/local/bin/docker-compose  ------------------giving permissions
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose ----------creating link for compose
+docker compose --version
+rm -rf *
+vim docker-compose.yml
+version: '3'
+services:
+   webapp1:
+     image: nginx
+     ports:
+       - "8000:80"  
+
+8000 ------is going to map ur container ,  80: ----port tcp
+
+docker-compose up ------------------all the appications we wana run can be placed in yml file and that file is going to run by using the command up.
+
+copy public ip address and paste in browser with :8000 and we will get the ngix page
+
+///// If wana get 2 ngix in the browser:
+
+vim docker-compose.yml
+version: '3'
+services:
+   webapp1:
+     image: nginx
+     ports:
+       - "8000:80"
+   webapp2:
+     image: nginx
+     ports:
+     ports:
+       - "8001:80" 
+ docker-compose up
+ same copy public ip :8001 ----we will see the ngix page
+       
+       
+
+
+
+
+
+
+
 
 
 DOCKER PORTS:
