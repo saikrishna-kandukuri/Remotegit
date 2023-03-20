@@ -621,6 +621,125 @@ for detailed explanation: https://www.geeksforgeeks.org/how-to-setup-jenkins-in-
  Swarm worker and Swarm Manager
  
  
+ Docker engine creates --- docker swarm manager ----creates swarm worker nodes
+
+Docker Swarm Components:
+
+Service: Represents a part of the feature of an application
+Task: A single part of work
+Manager: This manages the work among the different nodes.
+Worker : Which works for a specific purpose of the service
+
+INFRASTRUCTURE OF THE SWARM:
+
+1. CREATE 3 NODES 1---MANAGER , 2 ---WORKER NODES.
+
+sudo -i
+sudo yum update -y
+docker --version
+service docker start
+service docker status
+docker swarm init --advertise-addr 18.217.78.75   Here: master docker public ip address
+o/p: Swarm initialized: current node (hitqijfsti08sqqr2flyughdk) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-2jrhrpvnn2d5u4pvjz1l096quqmoz2sp4vfmz4qkorzpiblo54-2qpll8ffcqvqzai9doppki2wd 18.217.78.75:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions. 
+
+
+// If we have error on connecting the same nodde as manager --leave the swarm
+
+docker swarm leave --force
+Do same process again : docker swarm init --advertise-addr 18.217.78.75   Here: master docker public ip address
+
+
+wana know the ports running on EC2 : netstat -tulpn | grep LISTEN
+
+docker swarm join --token SWMTKN-1-61gnpq745hvigyc3zj2zc12oukr3e2a1ug846uahi6n6ok3ett-161vg26o9jvlngmvvqbld8mnu 18.217.78.75:2377
+
+want to know how many nodes are connected to manager
+
+   > docker node ls 
+
+ 
+ o/p: ID                            HOSTNAME                                      STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+turdjsbifukpppzg4eb4n1zw6     ip-172-31-13-56.us-east-2.compute.internal    Ready     Active                          20.10.17
+w0thfgtynwy60lmwfhz87i1j1     ip-172-31-39-219.us-east-2.compute.internal   Ready     Active                          20.10.17
+z2ps7x2j0hdj84du4cew4ta3a *   ip-172-31-43-54.us-east-2.compute.internal    Ready     Active         Leader           20.10.17
+
+> details of manager /nodes: docker info
+
+Permanently delete the node:
+
+master node >docker node rm node -id 
+
+To delete the manager forcefully:
+
+docker swarm leave --force
+
+docker swarm join-token worker  ---------------> it gives the worker token
+docker swarm join-token manager -------------------> it give the manager token
+
+
+Service: service is nothing but a container
+We have replicas , if one service is down ,other will work as backup
+
+create a service : > docker service
+
+create a docker service: docker service create --name mtickets --replicas 3 --publish 80:80 httpd
+
+Here: mtickets is the servicename , replicas : h/w many nodes 
+
+docker service ls
+
+o/p: ID             NAME       MODE         REPLICAS   IMAGE          PORTS
+lu3p5wy5u4hn   mtickets   replicated   3/3        httpd:latest   *:80->80/tcp
+
+for service creation automatically container creates: docker ps -a
+
+docker ps  ---- container is up , normally container is down but when service is created and container automatically creates as up.
+
+To remove all services:
+
+docker rm -f servicename  or /
+
+docker rm -f containerID
+
+Wnana see the service in physically : copy public IP and paste in browser:80
+
+
+inspect the container: docker inspect containerID
+inspect service: docker service inspect --pretty servicename -----o/p: is json formate
+docker service inspect servicename -----o/p: is YAML formate
+
+DOCKER STACK:
+
+It is used to launch whole software together
+you will write all the services and launch them together
+
+docker stack deploy -c demo.yml demostack
+
+
+DOCKER PORTS:
+
+installing jenkins fron docker hub to docker :
+
+docker pull jenkinsci/jenkins -----here : this command available in docker hub directly as an image with all the dependencies in our local docker
+
+docker run -it --name cont-9 jenkinsci/jenkins /bin/bash
+docker run -p 8080:8080 -p 5000:5000 jenkinsci/jenkins
+
+01453a65026044109d0f08364694ceaf
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+
+copy public ip and paste in browser with Public ip of docker master:8080 ---we will get jenkins page to login and paste the admin password here
+
+want to come to root user ---control+c
+ 
+ 
  
 
 
