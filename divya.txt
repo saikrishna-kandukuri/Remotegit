@@ -803,6 +803,18 @@ copy public ip and paste in browser with Public ip of docker master:8080 ---we w
 want to come to root user ---control+c
  
  
+KUBERNETES:K8S ---CONTAINER MANAGEMENT TOOL
+
+Container Management
+Automates - Container deployment,container scaling and Load Balancing
+It schedules,runs and manages isolated containers which are running on virtual/physical/cloud machines
+It is supported by all the cloud providers
+Google introduces K8s as an open source
+k8s uses Go-lang
+docker also Go-lang
+Cloud Native Computing Foundation---donated by Google
+
+ 
  
 
 
