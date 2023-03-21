@@ -814,6 +814,43 @@ k8s uses Go-lang
 docker also Go-lang
 Cloud Native Computing Foundation---donated by Google
 
+ GKS:Google kubernetes services ----best
+ AKS:Azure Kubernetes services
+ EKS: Elastic Kubernetes Services
+ 
+ Tools: Mini-kude, Kube-adm ,Kube-ctl ---command line
+ 
+ CONTAINER SCALEUP PROBLEMS:
+ Complexity
+ Containers cannot communicate each other
+ Auto scalling and Load balancing was not possible
+ Containers had to be managed carefully
+ 
+ Auto scalling ---Automatically elastic of the containers
+ Load Balancing -----Managing containers
+ 
+ 
+ K8S Features:
+ 
+ Orchestration: clustering of any no of containers running on different networks
+ Auto scalling vertical --existing nodes manages --most preferable  and horizontal ----new nodes creates 
+ Auto healing
+ Load Balancing
+ Platform independent --cloud/virtual/physical
+ Fault tolerance(Node/pod Failure)
+ Roll back(Going back to previous version)
+ Health Monitoring of containers --If 1 container fails it will create another container
+ Batch Execution ---Onetime,sequential,parallel
+ Scripts in k8s is called manifest,which is in form of json or YAML
+ 
+ 
+ PARAMETERS:                                     DOCKER SWARM:                                                     KUBERNETES:
+ 
+ 1. Scaling                                      No Auto Scaling                                                    Auto-Scaling
+ 2. Load Balancing                               Does Auto-Load Balancing                                       Manually configure your load balancing settings
+ 3. Storage Volume sharing                       shares storage
+ 
+ 
  
  
 
