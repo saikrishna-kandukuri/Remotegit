@@ -4,3 +4,23 @@ file ---EFS -- Elastic file storage
 server ---RDS 
 EBS , EFS, RDS ----server dependency but s3 --no need server --having bucket
 S3: 10mb of file can be stored in s3 bucket , bukets are globally accessible, bucket --5TB max storage , object capacity in 1 bucket is -----5GB
+Object: real time entity like file,folder ...
+Bucket: Root level folder 
+bucket is used to store the objects
+we cannot delete bucket directly,first we need to empty it.
+
+Object parametere:
+
+Key: name of object
+value: data in bytes
+version id: shows versioning ---gives backup of theobject
+Metadata: data about data we are storing
+
+RULES:
+
+Unique name
+name is 3 to 63 characters
+only lower case is valid
+should not be in ip formate
+
+
