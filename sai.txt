@@ -1,1 +1,6 @@
-sai commit
+AWS services: Object -- s3 --simple storage service
+block --EBS ---Elastic block service
+file ---EFS -- Elastic file storage
+server ---RDS 
+EBS , EFS, RDS ----server dependency but s3 --no need server --having bucket
+S3: 10mb of file can be stored in s3 bucket , bukets are globally accessible, bucket --5TB max storage , object capacity in 1 bucket is -----5GB
