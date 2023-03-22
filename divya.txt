@@ -850,7 +850,444 @@ Cloud Native Computing Foundation---donated by Google
  2. Load Balancing                               Does Auto-Load Balancing                                       Manually configure your load balancing settings
  3. Storage Volume sharing                       shares storage
  
- 
+  1  useradd ansible
+    2  passwd ansible
+    3  visudo
+    4  vim /etc/ssh/sshd_config
+    5  sudo systemctl restart sshd
+    6  sudo systemctl status  sshd
+    7  su - ansible
+    8  git --version
+    9  tree --version
+   10  su - ansible
+   11  sudo yum remove git -y
+   12  git --version
+   13  su - ansible
+   14  sudo yum update-y
+   15  docker --version
+   16  docker images
+   17  docker search jenkins
+   18  docker images
+   19  docker ps
+   20  docker ps -a
+   21  cat /etc/os-release
+   22  docket run -it --name divya ubuntu /bin/bash
+   23  docket run -it --name divya1 ubuntu /bin/bash
+   24  docker run -it --name divya1 ubuntu /bin/bash
+   25  docker ps -a
+   26  docker run -it --name divya2  ubuntu touch f1 
+   27  docker ps -a
+   28  docker start divya1
+   29  docker ps -a
+   30  docker ps
+   31  docker attach divya1
+   32  docker ps -s
+   33  docker ps -a
+   34  docker attach quizzical_jemison
+   35  yum install docker -y
+   36  docker --version
+   37  docker version
+   38  systemctl restart docker.service
+   39  systemctl status  docker.service
+   40  docker version
+   41  ll
+   42  history
+   43  docker info
+   44  docker images
+   45  docker pull ubuntu
+   46  docker images
+   47  docker run redis
+   48  docker ps -a
+   49  docker stop ps 
+   50  docker ps -a
+   51  docker ps
+   52  docker stop redis
+   53  docker ps 
+   54  docker ps -a
+   55  docker rm divya2
+   56  docker ps -a
+   57  docker rm divya1
+   58  docker ps -a
+   59  docker stop redis
+   60  docker stop quizzical_jemison
+   61  docker ps -a
+   62  docker rm thirsty_jang
+   63  docker rm gallant_ptolemy
+   64  quizzical_jemison
+   65  docker ps -a
+   66  docker rm quizzical_jemison
+   67  docker ps -a
+   68  docker ps
+   69  docker images
+   70  docker run -it --name divya ubuntu /bin/bash
+   71  docker diff divya
+   72  docker images
+   73  docker ps
+   74  docker ps -a
+   75  docker commit divya ubuntu
+   76  docker images
+   77  docker commit divya ubuntu1
+   78  docker images
+   79  docker rm ubuntu
+   80  docker ps -a
+   81  docker images
+   82  docker run -it --name divya1 ubuntu1
+   83  docker images
+   84  docker commit divya1 ubuntu1
+   85  docker images
+   86  docker run -it --name divya2 ubuntu1
+   87  history
+   88  docker images
+   89  docker ps -a
+   90  docker image rm ubuntu1
+   91  docker rm ubuntu1
+   92  docker image rm ubuntu1
+   93  docker image rm [ubuntu1]
+   94  docker rm 60e2f14dde57
+   95  docker images
+   96  sudo yum update -y
+   97  yum install docker -y
+   98  docker --version
+   99  docker version
+  100  systemctl restart docker.service
+  101  systemctl status  docker.service
+  102  docker version
+  103  docker images
+  104  docker ps -a
+  105  docker images
+  106  docker ps
+  107  docker ps -a
+  108  history
+  109  docker pull alpine
+  110  docker ps -a
+  111  docker run alpine
+  112  docker ps -a
+  113  docker search jenkins
+  114  docker images
+  115  docker ps -a
+  116  docker run -t
+  117  docker run -it ubuntu
+  118  sudo yum update -y
+  119  docker swarm init --advertise-addr 18.217.78.75    
+  120  docker --version
+  121  service docker start
+  122  service docker status
+  123  docker swarm init --advertise-addr 18.217.78.75    
+  124  service docker start
+  125  service docker status
+  126  docker swarm init --advertise-addr 18.217.78.75    
+  127  docker swarm leave
+  128  docker swarm init --advertise-addr 18.217.78.75    
+  129  docker --version
+  130  docker swarm init --advertise-addr 18.217.78.75    
+  131  docker --version
+  132  docker version
+  133  service docker start
+  134  service docker status
+  135  docker swarm init --advertise-addr 18.217.78.75
+  136  docker info
+  137  docker swarm leave --force
+  138  docker swarm init --advertise-addr 18.217.78.75   Here: master docker public ip address
+  139  docker swarm init --advertise-addr 18.217.78.75
+  140  netstat -tulpn | grep LISTEN
+  141  ufw allow 22/tcp && ufw allow 53/tcp && ufw allow 2377/tcp && ufw allow 7946/tcp && ufw allow 7946/udp && ufw allow 4789/udp && ufw reload && ufw enable && systemctl restart docker
+  142  docker info
+  143  service docker restart
+  144  service docker status
+  145  docker swarm leave --f
+  146  docker swarm leave --force
+  147  docker swarm init --listen-addr <18.217.78.75:2377>
+  148  docker swarm init --advertise-addr 18.217.78.75
+  149  docker node ls
+  150  docker info
+  151  docker node ls
+  152  docker service create --name mtickets --replicas 3 --publish 80:80 httpd
+  153  docker service ls
+  154  docker service
+  155  docker service ls
+  156  docker ps -a
+  157  docker ps
+  158  docker service ls
+  159  docker ps 
+  160  docker inspect 1347cb9e14aa
+  161  docker service ls
+  162  docker service inspect --pretty mtickets
+  163  docker stack deploy -c demo.yml demostack
+  164  sudo yum update -y
+  165  docker images
+  166  docker yum install -y
+  167  docker yum install - y
+  168  sudo yum install docker - y
+  169  yum install docker - y
+  170  docker images
+  171  docker --version
+  172  docker version
+  173  service docker start
+  174  service docker status
+  175  docker images
+  176  docker rm images *
+  177  docker rm -rf images
+  178  docker rmi -f $(docker images -q)
+  179  docker images
+  180  docker ps -a
+  181  docker rm divya
+  182  docker rm divya1
+  183  docker rm divya2
+  184  docker rm mtickets.1.p4vcb63p2qszst9m1wsca7kmj
+  185  docker stop mtickets.1.p4vcb63p2qszst9m1wsca7kmj
+  186  docker stop mtickets.3.pzssn5q26006ffhkdx4gbp18l
+  187  docker stop mtickets.2.yad45k35u8sbvjm672o7j394c
+  188  docker stop mtickets.2.j45q4n4awndhns20he0mls27q
+  189  docker rm mtickets.2.j45q4n4awndhns20he0mls27q
+  190  docker rm mtickets.2.yad45k35u8sbvjm672o7j394c
+  191  docker rm mtickets.3.pzssn5q26006ffhkdx4gbp18l
+  192  docker rm mtickets.1.p4vcb63p2qszst9m1wsca7kmj
+  193  docker ps -a
+  194  docker ps
+  195  docker stop mtickets.2.kfbvmomhfjshgyngt3eiis952
+  196  docker ps
+  197  docker stop mtickets.3.pzx4eszuhg4nzx2956cr2jzae
+  198  docker stop mtickets.1.r1ewxu3pjgwlpkcd8q09p90g1
+  199  docker ps
+  200  docker ps -a
+  201  docker rm mtickets.2.rabv9c0gcofg6lb6cijbq4rsg
+  202  docker pull jenkinsci/jenkins
+  203  docker run -t --name cont-9 jenkinsci/jenkins
+  204  service docker start
+  205  service docker status
+  206  docker run -t --name cont-9 jenkinsci/jenkis /bin/bash
+  207  docker login
+  208  docker run -t --name cont-9 jenkinsci/jenkis /bin/bash
+  209  docker run -t --name cont-8 jenkisci/jenkins /bin/bash
+  210  docker run -t --name cont-8 jenkisci/jenkins/bin/bash
+  211  docker run -t --name cont-1 jenkisci/jenkins/bin/bash
+  212  docker inspect jenkinsci/jenkins
+  213  docker run -p 8080:8080 -p 5000:5000 jenkinsci/jenkins
+  214  docker ps -a
+  215  service docker start
+  216  service docker status
+  217  docker images
+  218  docker run redis
+  219  docker ps -a
+  220  docker images
+  221  docker run -it --name cont-2 ubuntu /bin/bash
+  222  docker images
+  223  docker commit cont-2 ubuntu-1
+  224  docker images
+  225  docker login
+  226  docker images 
+  227  docker tag ubuntu-1 divyatunuguntla
+  228  /
+  229  docker tag ubuntu-1 divyatunuguntla/biscuitfactory
+  230  docker images
+  231  docker push divyatunuguntla/biscuitfactory
+  232  docker images
+  233  docker ps -a
+  234  docker stop $(docker ps -a -q)
+  235  docker rm $(docker ps -a -q)
+  236  docker ps -a
+  237  docker stop $(docker ps -a -q)
+  238  docker rm $(docker ps -a -q)
+  239  docker stop $(docker ps -a -q)
+  240  docker rmi -f $(docker images -q)
+  241  docker images
+  242  docker ps
+  243  docker stop mtickets.1.im3hmow322pumk1aom414f7zr
+  244  docker ps
+  245  docker stop mtickets.2.v7fx0qugkmibal2cbl0bl5ry7
+  246  docker stop mtickets.3.lalz7kwu2ew58vps504ljw9uf
+  247  docker ps
+  248  docker stop mtickets.2.yatqpyusz61wmjqrfy0le8iu6
+  249  docker stop mtickets.1.nnq0jcxct5p14sniuuhfnzr50
+  250  docker ps
+  251  docker ps -a
+  252  docker swarm init --advertise-addr 3.22.236.175    
+  253  docker swarm leave --force
+  254  docker swarm init --advertise-addr 3.22.236.175
+  255  docker node ls
+  256  docker info
+  257  docker service create -name payments -replicas 3 -publish 80:80 httpd
+  258  docker service create --name payments --replicas 3 --publish 80:80 httpd
+  259  docker service ls
+  260  docker ps -a
+  261  docker ps
+  262  docker rm -f payments
+  263  docker rm -f a1c0afcbed72
+  264  docker ps
+  265  docker inspect a1c0afcbed72
+  266  docker service ls
+  267  docker service inspect --pretty payments
+  268  docker service inspect  payments
+  269  docker stack deploy -c demo.yml demostack
+  270  vim demo.yml
+  271  curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+  272  chmod +x /usr/local/bin/docker-compose
+  273  ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  274  docker compose --version
+  275  ll
+  276  rm -rf *
+  277  vim docker-compose.yml
+  278  docker-compose up
+  279  vim docker-compose.yml
+  280  docker-compose up
+  281  docker images
+  282  docker ps
+  283  docker-compose --help
+  284  vim docker-compose.yml
+  285  docker compose up
+  286  docker-compose up
+  287  vim dockerfile
+  288  docker-compose up
+  289  vim requirements.txt
+  290  docker-compose up
+  291  vim app.py
+  292  docker-compose up
+  293  mkdir composetest
+  294  cd composetest
+  295  copy app.py
+  296  cd ../
+  297  ll
+  298  rm -rf *
+  299  ll
+  300  mkdir composetest
+  301  cd composetest
+  302  vim app.py
+  303  vim requirements.txt
+  304  vim Dockerfile
+  305  vim docker-compose.yml
+  306  docker compose up
+  307  docker-compose up
+  308  cd ../
+  309  docker-compose ps
+  310  docker-compose down --volumes
+  311  docker compose down --volumes
+  312  ll
+  313  rm -rf *
+  314  ll
+  315  yum install git -y
+  316  cat /etc/passwd/
+  317  cat /etc/passwd
+  318  curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  319  ll
+  320  chmode +x minikube
+  321  chmod +x minikube
+  322  sudo mv minikube /usr/local/bin/
+  323  ls usr/local/bin
+  324  ls /usr/local/bin
+  325  minikube version
+  326  minikube --version
+  327  minikube version
+  328  minikube -version
+  329  minikube --version
+  330  sudo minikube start --vm-driver=none
+  331  minikube start
+  332  choco install curl
+  333  curl http://google.com 
+  334  minikube start
+  335  $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  336  $ minikube status
+  337  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
+  338  sudo install minikube-darwin-amd64 /usr/local/bin/minikube
+  339  minikube start
+  340  sudo minikube start --vm-driver=none
+  341  ls /usr/local/bin/
+  342  cd /minikube
+  343  cat minikube
+  344  minikube start --driver=virtualbox
+  345  Run minikube start --alsologtostderr -v=7 
+  346  minikube start --driver=docker
+  347  curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl
+  348  ll
+  349  chmod 777 kubectl
+  350  mv ./kubectl /usr/local/bin/kubectl
+  351  ls /usr/local/bin/
+  352  rm -rf docker-compose
+  353  ls /usr/local/bin/
+  354  kubectl --version
+  355  kubectl version
+  356  $(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
+  357  curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/darwin/amd64/kubectl
+  358  chmod +x ./kubectl
+  359  sudo mv ./kubectl /usr/local/bin/kubectl
+  360  ls /usr/local/bin/
+  361  history
+  362  kubectl version
+  363  sudo apt get install docker -y
+  364  yum install docker -y
+  365  systemctl docker start
+  366  docker version
+  367  service docker restart
+  368  service docker status
+  369  sudo usermod -aG docker $USER && newgrp docker
+  370  sudo minikube start --vm-driver=none
+  371   minikube start --vm-driver=none
+  372  sudo yum install conntrack -y
+  373   minikube start --vm-driver=none
+  374  sudo minikube start --vm-driver=none
+  375  minikube status
+  376  kubectl cluster info
+  377  kubectl cluster-info dump
+  378  kubectl get events
+  379  kubectl config view
+  380  kubectl run hello -minikube --image =grc.io/google_containers/echoserver:1.4--port=8080
+  381  kubectl get pods
+  382  kubectl create deployment hello-node--image=k8s.gcr.io/echoserver:1.4
+  383  history
+  
+ NAGIOS: 
+  
+  384  sudo yum instal httpd php -y
+  385  sudo yum install httpd php -y
+  386  sudo yum install gcc glibc glibc-common -y
+  387  sudo yum install gd gd-devel -y
+  388  sudo adduser -m nagios
+  389  history
+  390  sudo passwd nagios
+  391  sudo grpadd nagcmd
+  392  sudo groupadd nagcmd
+  393  sudo usermod -a -G nagcmd nagios
+  394  sudo usermod -a -G nagcmd apache
+  395  mkdir ~/downloads
+  396  cd ~/downloads
+  397  wget http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-4.0.8.tar.gz
+  398  wget http://nagios-plugins.org/download/nagios-plugins-2.0.3.tar.gz
+  399   tar zxvf nagios-4.0.8.tar.gz
+  400  ll
+  401  cd nagios-4.0.8/
+  402  ./configure --with-command-group=nagcmd
+  403  make all
+  404  sudo make install
+  405   sudo make install-init 
+  406  sudo make install-config
+  407  sudo make install-commandmode
+  408  sudo vim /usr/local/nagios/etc/objects/contacts.cfg
+  409  sudo make install-webconf
+  410  sudo make install-webconfig
+  411   make install-webconfig
+  412  cd  nagios-4.0.8
+  413  history
+  414  cd ~/downloads
+  415  cd nagios-4.0.8/
+  416  make install-webconf
+  417   sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+  418  sudo service httpd restart
+  419  sudo service httpd status
+  420  cd ~/downloads
+  421  tar zxvf nagios-plugins-2.0.3.tar.gz
+  422  cd ~/downloads 
+  423   tar zxvf nagios-plugins-2.0.3.tar.gz
+  424  cd nagios-plugins-2.0.3
+  425  ./configure --with-nagios-user=nagios --with-nagios-group=nagios
+  426  sudo make install
+  427  sudo chkconfig --add nagios
+  428  sudo chkconfig nagios on
+  429  sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+  430  sudo service nagios start
+  431  sudo service nagios sshd
+  432  sudo service sshd stsrt
+  433  sudo service sshd start
+  434  sudo service sshd status
+  435  history
  
  
 
